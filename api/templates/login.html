@@ -1,0 +1,66 @@
+<!--
+ * @Author: shihan
+ * @Date: 2023-12-10 12:45:04
+ * @version: 1.0
+ * @description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../static/welcome.css" />
+
+<body>
+
+        <div class="login-wrapper">
+            <div class="header">Login</div>
+            <div class="form-wrapper">
+                <form id="loginForm" action="/loginsubmit" method="post">
+                    <input type="text" name="user_id" id="user_id" placeholder="user_id" class="input-item">
+                    <input type="password" name="password" id="password" placeholder="password" class="input-item">
+                    <!-- <div><input type="submit" name="login" class="btn" value="Login" onclick="loginSystem()"></div> -->
+
+                    <div><input type="submit" name="login" class="btn" value="Login"></div>
+                </form>
+
+            <!-- <script>
+                document.getElementById('loginForm').addEventListener('submit', async function(event) {
+                    event.preventDefault();
+        
+                    const formData = new FormData(this);
+                    const user_id = formData.get('user_id');
+                    const password = formData.get('password');
+        
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ user_id, password })
+                    });
+        
+                    const responseData = await response.json();
+        
+                    if (response.ok) {
+                        alert(responseData.message);
+                        window.location.href = '/direct to note page';
+                    } else {
+                        alert(responseData.message); // show error msg
+                        document.getElementById('user_id').value = ''; // clear the page
+                        document.getElementById('password').value = '';
+                    }
+                });
+            </script> -->
+            
+            </div>
+            <div class="msg">
+                Don't have account?
+                <a href="/register">Sign up</a>
+            </div>
+        </div>
+
+</body>
+</html>
